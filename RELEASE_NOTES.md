@@ -2,7 +2,7 @@
 
 **Edición definitiva para ZX Spectrum 48K — © 2026 Tony C. Ware**
 
-[**Ver Release v1.0 y descargar archivos**](https://github.com/OnRail76/Circo-Dimensional/releases/tag/v1.0)
+**Release oficial v1.0** — [Abrir página y descargar archivos](https://github.com/OnRail76/Circo-Dimensional/releases/tag/v1.0)
 
 ## Características finales
 
@@ -26,9 +26,9 @@ El repositorio contiene además las fuentes Z80, el banco de trabajo, gráficos,
 
 ## Licencias
 
-El **código fuente y las herramientas** se distribuyen bajo **[MIT](LICENSE)**, con aviso © 2026 Tony C. Ware.
+El **código fuente y las herramientas** se distribuyen bajo **[MIT](https://github.com/OnRail76/Circo-Dimensional/blob/main/LICENSE)**, con aviso © 2026 Tony C. Ware.
 
-Los **gráficos, logotipo, carátulas y capturas** tienen derechos separados y no están cubiertos automáticamente por MIT. Consulta [LICENCIA_GRAFICOS.md](LICENCIA_GRAFICOS.md) y [DERECHOS.md](DERECHOS.md).
+Los **gráficos, logotipo, carátulas y capturas** tienen derechos separados y no están cubiertos automáticamente por MIT. Consulta [LICENCIA_GRAFICOS.md](https://github.com/OnRail76/Circo-Dimensional/blob/main/LICENCIA_GRAFICOS.md) y [DERECHOS.md](https://github.com/OnRail76/Circo-Dimensional/blob/main/DERECHOS.md).
 
 ## Autoría
 
