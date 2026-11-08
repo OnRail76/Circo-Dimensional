@@ -1,6 +1,6 @@
 # 🎪 EL CIRCO DIMENSIONAL
 
-**ZX Spectrum 48K · Edición definitiva v1.0 · © 2026 Tony C. Ware**
+**ZX Spectrum 48K · Edición definitiva v1.1 · © 2026 Tony C. Ware**
 
 ![Carátula oficial](arte/Caratula_Circo_Dimensional_Tony_C_Ware.png)
 
@@ -8,9 +8,11 @@ Un videojuego de reflejos inspirado en las primeras *Game & Watch*. Dom, el doma
 
 ## 🎮 Jugar
 
-**[Descargar la Release oficial v1.0](https://github.com/OnRail76/Circo-Dimensional/releases/tag/v1.0)**
+**[Descargar la Release oficial v1.1](https://github.com/OnRail76/Circo-Dimensional/releases/tag/v1.1)**
 
-Descarga el archivo [CIRCO_DIMENSIONAL_48K_v1.0.tap](juego/CIRCO_DIMENSIONAL_48K_v1.0.tap), configura **Fuse** como ZX Spectrum 48K, carga la cinta y pulsa ESPACIO en la pantalla de título.
+La [v1.0 original](https://github.com/OnRail76/Circo-Dimensional/releases/tag/v1.0) se conserva como versión histórica.
+
+Descarga el archivo [CIRCO_DIMENSIONAL_48K_v1.1.tap](juego/CIRCO_DIMENSIONAL_48K_v1.1.tap), configura **Fuse** como ZX Spectrum 48K, carga la cinta y pulsa ESPACIO en la pantalla de título.
 
 | Tecla | Acción |
 | --- | --- |
@@ -22,7 +24,12 @@ Descarga el archivo [CIRCO_DIMENSIONAL_48K_v1.0.tap](juego/CIRCO_DIMENSIONAL_48K
 
 Tres vidas, latigazo ilimitado, dificultad progresiva, escenarios coloridos y **sonido beeper** para Spectrum 48K.
 
+**Novedades de v1.1:** tic corto por descenso de pulpos, GAME OVER visible al menos 5 segundos, **VS** amarillo en el título y dificultad ligeramente superior desde los cinco puntos.
+
 ## 📸 Capturas del juego
+
+*Nota: las capturas de acción y los PDF ilustran el motor original; las novedades de v1.1 se documentan en las notas de lanzamiento.*
+
 
 | Cuatro pulpos en acción | Latigazo visible |
 | --- | --- |
@@ -38,7 +45,8 @@ Tres vidas, latigazo ilimitado, dificultad progresiva, escenarios coloridos y **
 - [Banco de trabajo](banco_de_trabajo/): recursos, scripts, pantallas y pruebas.
 - [Carátula y otros diseños](arte/).
 - [Capturas del juego](capturas/).
-- [Notas de la Release v1.0](RELEASE_NOTES.md).
+- [Notas de la Release v1.1](RELEASE_NOTES_v1.1.md).
+- [Script de reconstrucción exacta v1.1](publicacion/v1_1/reconstruir_v1_1.py).
 
 ## ⚙️ Especificaciones
 

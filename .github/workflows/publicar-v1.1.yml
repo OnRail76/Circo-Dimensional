@@ -1,0 +1,66 @@
+name: Publicar El Circo Dimensional v1.1
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'publicacion/v1_1/**'
+      - '.github/workflows/publicar-v1.1.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Obtener repositorio
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Reconstruir y verificar TAP 1.1
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 publicacion/v1_1/reconstruir_v1_1.py \
+            juego/CIRCO_DIMENSIONAL_48K_v1.0.tap \
+            juego/CIRCO_DIMENSIONAL_48K_v1.1.tap
+          echo "9105d9679319aae0f4de445142276c1bfe7c65df36993e6f86ad87ddfa03dac1  juego/CIRCO_DIMENSIONAL_48K_v1.1.tap" | sha256sum -c -
+      - name: Publicar TAP verificado en repositorio
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add juego/CIRCO_DIMENSIONAL_48K_v1.1.tap
+          if ! git diff --cached --quiet; then
+            git commit -m "release: añadir TAP 1.1 verificado"
+            git push origin HEAD:main
+          fi
+      - name: Crear ZIP completo de edición definitiva 1.1
+        shell: bash
+        run: |
+          set -euo pipefail
+          zip -q -r CIRCO_DIMENSIONAL_V1.1_COMPLETO.zip \
+            juego fuente docs arte capturas banco_de_trabajo publicacion/v1_1 \
+            README.md RELEASE_NOTES_v1.1.md LICENSE LICENCIA_GRAFICOS.md DERECHOS.md
+          unzip -tqq CIRCO_DIMENSIONAL_V1.1_COMPLETO.zip
+      - name: Crear o actualizar Release v1.1
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          if ! gh release view v1.1 >/dev/null 2>&1; then
+            gh release create v1.1 \
+              --target main \
+              --title "El Circo Dimensional v1.1 — Edición definitiva" \
+              --notes-file RELEASE_NOTES_v1.1.md \
+              --latest
+          else
+            gh release edit v1.1 --notes-file RELEASE_NOTES_v1.1.md --latest
+          fi
+          gh release upload v1.1 \
+            juego/CIRCO_DIMENSIONAL_48K_v1.1.tap \
+            CIRCO_DIMENSIONAL_V1.1_COMPLETO.zip \
+            docs/Manual_Circo_Dimensional.pdf \
+            docs/Atlas_Visual_Circo_Dimensional.pdf \
+            LICENSE LICENCIA_GRAFICOS.md --clobber
