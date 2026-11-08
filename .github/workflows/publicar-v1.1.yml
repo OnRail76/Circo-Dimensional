@@ -1,66 +1,56 @@
-name: Publicar El Circo Dimensional v1.1
+name: Verificar y empaquetar El Circo Dimensional v1.1
 on:
   push:
     branches: [main]
     paths:
-      - 'publicacion/v1_1/**'
       - '.github/workflows/publicar-v1.1.yml'
   workflow_dispatch:
+
 permissions:
   contents: write
+
 jobs:
-  publicar:
+  comprobar-y-empaquetar:
     runs-on: ubuntu-latest
     steps:
-      - name: Obtener repositorio
+      - name: Descargar repositorio
         uses: actions/checkout@v4
         with:
+          fetch-depth: 0
           persist-credentials: true
-      - name: Reconstruir y verificar TAP 1.1
-        shell: bash
+      - name: Preparar recursos gráficos de prueba
+        run: |
+          python3 -m pip install Pillow
+      - name: Reconstruir v1.0 y v1.1 y comprobar bytes originales
         run: |
           set -euo pipefail
-          python3 publicacion/v1_1/reconstruir_v1_1.py \
-            juego/CIRCO_DIMENSIONAL_48K_v1.0.tap \
-            juego/CIRCO_DIMENSIONAL_48K_v1.1.tap
+          python3 banco_de_trabajo/REBUILD_FINAL.py
+          echo "69f2cc4d4682eca9160595107886c0b9449b6cc745c4e2468e324b5db10f41f1  juego/CIRCO_DIMENSIONAL_48K_v1.0.tap" | sha256sum -c -
           echo "9105d9679319aae0f4de445142276c1bfe7c65df36993e6f86ad87ddfa03dac1  juego/CIRCO_DIMENSIONAL_48K_v1.1.tap" | sha256sum -c -
-      - name: Publicar TAP verificado en repositorio
-        shell: bash
+      - name: Actualizar captura real del título VS
         run: |
           set -euo pipefail
+          python3 publicacion/v1_1/extraer_titulo.py juego/CIRCO_DIMENSIONAL_48K_v1.1.tap capturas/titulo.png
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add juego/CIRCO_DIMENSIONAL_48K_v1.1.tap
+          git add capturas/titulo.png
           if ! git diff --cached --quiet; then
-            git commit -m "release: añadir TAP 1.1 verificado"
+            git commit -m "docs: actualizar título real v1.1 con VS"
             git push origin HEAD:main
           fi
-      - name: Crear ZIP completo de edición definitiva 1.1
-        shell: bash
+      - name: Crear ZIP con SOLO archivos seguidos por Git
         run: |
           set -euo pipefail
-          zip -q -r CIRCO_DIMENSIONAL_V1.1_COMPLETO.zip \
-            juego fuente docs arte capturas banco_de_trabajo publicacion/v1_1 \
-            README.md RELEASE_NOTES_v1.1.md LICENSE LICENCIA_GRAFICOS.md DERECHOS.md
+          git archive --format=zip --prefix="Circo_Dimensional_v1.1/" HEAD --output=CIRCO_DIMENSIONAL_V1.1_COMPLETO.zip
           unzip -tqq CIRCO_DIMENSIONAL_V1.1_COMPLETO.zip
-      - name: Crear o actualizar Release v1.1
-        shell: bash
+          unzip -Z -1 CIRCO_DIMENSIONAL_V1.1_COMPLETO.zip | grep -E '\.tap$' > taps_en_zip.txt
+          test "$(wc -l < taps_en_zip.txt)" -eq 2
+          ! grep -Eq '(banco_de_trabajo/.*\.(tap|bin|log)|EDICION_DEFINITIVA_CONTROL_POR_TOQUES_2026.zip)' taps_en_zip.txt
+          cat taps_en_zip.txt
+      - name: Actualizar solo el ZIP de Release v1.1
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
-          if ! gh release view v1.1 >/dev/null 2>&1; then
-            gh release create v1.1 \
-              --target main \
-              --title "El Circo Dimensional v1.1 — Edición definitiva" \
-              --notes-file RELEASE_NOTES_v1.1.md \
-              --latest
-          else
-            gh release edit v1.1 --notes-file RELEASE_NOTES_v1.1.md --latest
-          fi
-          gh release upload v1.1 \
-            juego/CIRCO_DIMENSIONAL_48K_v1.1.tap \
-            CIRCO_DIMENSIONAL_V1.1_COMPLETO.zip \
-            docs/Manual_Circo_Dimensional.pdf \
-            docs/Atlas_Visual_Circo_Dimensional.pdf \
-            LICENSE LICENCIA_GRAFICOS.md --clobber
+          gh release view v1.1
+          gh release upload v1.1 CIRCO_DIMENSIONAL_V1.1_COMPLETO.zip --clobber

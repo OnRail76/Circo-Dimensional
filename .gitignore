@@ -1,4 +1,16 @@
+# Archivos temporales y binarios generados (no publicar).
 __pycache__/
-*.pyc
+*.py[cod]
 .venv/
+venv/
+*.log
 .DS_Store
+Thumbs.db
+
+# Los únicos TAP oficiales versionados están en juego/.
+/banco_de_trabajo/*.tap
+/banco_de_trabajo/Control_por_toques/*.tap
+/banco_de_trabajo/CIRCO_NAVIDAD85_V*.bin
+/banco_de_trabajo/CIRCO_NAVIDAD85_V*.asm
+/banco_de_trabajo/Control_por_toques/*.bin
+/banco_de_trabajo/*.png

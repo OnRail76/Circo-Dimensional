@@ -1,31 +1,35 @@
-EL CIRCO DIMENSIONAL · EDICIÓN FINAL 2026
-========================================
+EL CIRCO DIMENSIONAL — REPOSITORIO OFICIAL, v1.1
+================================================
 
-Juego/
-  CIRCO_DIMENSIONAL_48K_FINAL_2026.tap  -> Spectrum 48K, cargar en Fuse con LOAD "".
-Fuentes/
-  CIRCO_NAVIDAD85_FINAL_2026.asm  -> fuente completo Z80 de la compilación final.
-  CIRCO_NAVIDAD85_FINAL_2026.bin  -> código máquina y recursos.
-Banco_de_trabajo/Edicion_2026/
-  art.py, build.py, REBUILD_FINAL.py, pantallas, sprites, pruebas, logs y capturas.
-Manual_y_Atlas/
-  MANUAL_CIRCO_DIMENSIONAL_EDICION_DEFINITIVA.pdf
-  ATLAS_VISUAL_CIRCO_DIMENSIONAL_EDICION_DEFINITIVA.pdf
-Arte_original/
-  Carátula facilitada por el autor, atlas de sprites y diagrama de cinco carriles.
-Capturas/
-  titulo.png, pulpos.png, latigo.png, game.png, fin.png.
+JUEGO (ZX Spectrum 48K)
+  juego/CIRCO_DIMENSIONAL_48K_v1.1.tap     Versión definitiva y recomendada.
+  juego/CIRCO_DIMENSIONAL_48K_v1.0.tap     Versión histórica.
+  Emulador: Fuse, modelo Spectrum 48K; cargar la cinta (LOAD "").
+  O/P: mover un carril por pulsación; ESPACIO: latigazo.
 
-EDICIÓN DEFINITIVA 2026 · TONY C. WARE
-Dirección creativa, concepto, pruebas en Fuse y decisiones finales: Tony C. Ware.
-Programación, arte de juego y documentación: colaboración con ChatGPT.
+DOCUMENTACIÓN Y ARTE
+  docs/Manual_Circo_Dimensional.pdf
+  docs/Atlas_Visual_Circo_Dimensional.pdf
+  arte/       Carátula, diagrama y atlas de sprites.
+  capturas/   Imágenes del juego, incluido título v1.1 con VS.
 
-CAMBIOS FINALES:
- - La pantalla del juego muestra «2026 Tony C. Ware».
- - El motor jugable y el resto de pantallas se han preservado respecto a V10.
- - Documentación corregida: capturas con pulpos y descarga visible.
- - Tablas con texto ajustado y sin desbordes.
+FUENTES Y HERRAMIENTAS
+  fuente/                Listado Z80 y binario del motor base.
+  banco_de_trabajo/      Generador art.py / build.py y tests.
+  publicacion/v1_1/      Parches reproducibles, título y notas técnicas.
 
-Las imágenes documentales de pulpos y rayo proceden de estados controlados
-procesados por el simulador parcial Z80: muestran auténtico código y arte
-del juego, pero NO son capturas directas de Fuse.
+RECONSTRUIR Y COMPROBAR
+  python3 -m pip install Pillow
+  python3 banco_de_trabajo/REBUILD_FINAL.py
+
+La reconstrucción crea archivos temporales locales y confirma que las salidas
+v1.0 y v1.1 coinciden byte por byte con los TAP publicados.
+
+VERSIONES Y LICENCIAS
+  Release v1.1: https://github.com/OnRail76/Circo-Dimensional/releases/tag/v1.1
+  Release v1.0: https://github.com/OnRail76/Circo-Dimensional/releases/tag/v1.0
+  LICENSE             Código y herramientas: MIT, © 2026 Tony C. Ware.
+  LICENCIA_GRAFICOS.md  Arte, sprites, carátula y logotipo: derechos reservados.
+
+Las copias obsoletas no están en la rama principal; permanecen recuperables
+desde el historial de Git o en los ZIP históricos de las Releases.

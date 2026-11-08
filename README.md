@@ -37,12 +37,25 @@ Tres vidas, latigazo ilimitado, dificultad progresiva, escenarios coloridos y **
 
 *Las capturas de acción proceden de estados controlados del motor Z80 simulado. El juego también se probó de forma jugable en Fuse durante su desarrollo.*
 
+## 🧹 Repositorio limpio y reconstrucción verificable
+
+Solo se publican dos TAP en `juego/`: **v1.0 histórica** y **v1.1 definitiva**. Los resultados temporales del banco de trabajo ya no se versionan.
+
+Para reconstruir y cotejar ambas versiones desde el motor original:
+
+```bash
+python3 -m pip install Pillow
+python3 banco_de_trabajo/REBUILD_FINAL.py
+```
+
+La comparación es byte por byte e incluye comprobación SHA256. Consulta [cómo están organizadas las fuentes](fuente/README.md) y el [historial de limpieza](docs/HISTORIAL_Y_LIMPIEZA.md).
+
 ## 📚 Documentación y material de desarrollo
 
 - [Manual en PDF](docs/Manual_Circo_Dimensional.pdf): historia de Dom, controles y pantallas.
 - [Atlas Visual en PDF](docs/Atlas_Visual_Circo_Dimensional.pdf): diseños, arquitectura técnica, problemas corregidos y memoria del proyecto.
-- [Código fuente Z80](fuente/CIRCO_NAVIDAD85_FINAL_2026.asm).
-- [Banco de trabajo](banco_de_trabajo/): recursos, scripts, pantallas y pruebas.
+- [Fuente Z80 del motor base](fuente/CIRCO_NAVIDAD85_FINAL_2026.asm), con [parches y guía de construcción](fuente/README.md).
+- [Banco de trabajo](banco_de_trabajo/README.md): generadores, recursos de pantalla y pruebas, sin TAP intermedios.
 - [Carátula y otros diseños](arte/).
 - [Capturas del juego](capturas/).
 - [Notas de la Release v1.1](RELEASE_NOTES_v1.1.md).

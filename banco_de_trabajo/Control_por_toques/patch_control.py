@@ -6,7 +6,7 @@ appended routine that detects fresh O/P keypresses rather than key repeats.
 from pathlib import Path
 import struct
 
-SOURCE_TAP = Path(__file__).parent/'CIRCO_DIMENSIONAL_48K_FINAL_2026_ORIGINAL.tap'
+SOURCE_TAP = Path(__file__).resolve().parent.parent/'CIRCO_DIMENSIONAL_NAVIDAD85_V10.tap'
 OUTPUT_TAP = Path(__file__).parent/'CIRCO_DIMENSIONAL_48K_DEFINITIVO_CONTROL_TOQUES.tap'
 OUTPUT_BIN = Path(__file__).parent/'CIRCO_DIMENSIONAL_CONTROL_TOQUES.bin'
 
