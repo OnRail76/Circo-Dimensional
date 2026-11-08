@@ -26,7 +26,11 @@ Tres vidas, latigazo ilimitado, dificultad progresiva y sonido beeper.
 
 ## Distribución v1.0
 
-El paquete final reúne el TAP jugable, código fuente, banco de trabajo, carátula, manual, Atlas Visual y capturas. **La incorporación de los binarios y los PDF a GitHub está pendiente; no están todavía alojados en el repositorio ni existe una GitHub Release publicada.**
+**[Descargar TAP definitivo con control por toques](juego/CIRCO_DIMENSIONAL_48K_v1.0.tap).** El juego ya está en este repositorio.
+
+El manual, Atlas, carátula, fuentes y banco de trabajo se incorporarán automáticamente al subir el paquete `CIRCO_DIMENSIONAL_EDICION_DEFINITIVA_CONTROL_POR_TOQUES_2026.zip` a la raíz del repositorio. Un workflow de GitHub Actions comprobará el TAP, organizará los archivos y publicará la **Release v1.0**. No se modificará el juego.
+
+Puedes ver el progreso en [Actions](../../actions) y, tras finalizar, descargarlo todo desde [Releases](../../releases).
 
 Consulta [las notas de v1.0](RELEASE_NOTES.md).
 
