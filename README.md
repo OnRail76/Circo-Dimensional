@@ -2,42 +2,63 @@
 
 **ZX Spectrum 48K · Edición definitiva v1.0 · © 2026 Tony C. Ware**
 
-Un juego original de reflejos inspirado en las primeras *Game & Watch*. Dom, el domador del Circo Europeo, debe detener a unos pulpos interdimensionales que entran en la carpa a través de cinco portales.
+![Carátula oficial](arte/Caratula_Circo_Dimensional_Tony_C_Ware.png)
 
-## Controles
+Un videojuego de reflejos inspirado en las primeras *Game & Watch*. Dom, el domador del Circo Europeo, debe detener los pulpos interdimensionales que entran en la carpa desde **cinco portales**.
+
+## 🎮 Jugar
+
+**[Descargar la Release oficial v1.0](https://github.com/OnRail76/Circo-Dimensional/releases/tag/v1.0)**
+
+Descarga el archivo [CIRCO_DIMENSIONAL_48K_v1.0.tap](juego/CIRCO_DIMENSIONAL_48K_v1.0.tap), configura **Fuse** como ZX Spectrum 48K, carga la cinta y pulsa ESPACIO en la pantalla de título.
 
 | Tecla | Acción |
 | --- | --- |
-| **O** | Mover un carril a la izquierda |
-| **P** | Mover un carril a la derecha |
+| **O** | Avanzar exactamente un carril a la izquierda |
+| **P** | Avanzar exactamente un carril a la derecha |
 | **ESPACIO** | Latigazo energético |
 
-**Control por toques:** cada pulsación mueve exactamente un carril; mantener O/P no provoca desplazamientos repetidos.
+**Control por toques:** mantener O o P pulsada **no** repite movimientos. Para avanzar otro carril, suelta y vuelve a pulsar.
 
-Tres vidas, latigazo ilimitado, dificultad progresiva y sonido beeper.
+Tres vidas, latigazo ilimitado, dificultad progresiva, escenarios coloridos y **sonido beeper** para Spectrum 48K.
 
-## Especificaciones
+## 📸 Capturas del juego
 
-- Ordenador: ZX Spectrum 48K.
-- CPU: Z80; juego en código máquina.
-- Vídeo: gráficos en color de 256 × 192 píxeles.
-- Presentación: crédito «2026 Tony C. Ware».
-- Emulación: compatible con Fuse (Spectrum 48K).
+| Cuatro pulpos en acción | Latigazo visible |
+| --- | --- |
+| ![Pulpos](capturas/pulpos.png) | ![Latigazo](capturas/latigo.png) |
 
-## Distribución v1.0
+*Las capturas de acción proceden de estados controlados del motor Z80 simulado. El juego también se probó de forma jugable en Fuse durante su desarrollo.*
 
-**[Descargar TAP definitivo con control por toques](juego/CIRCO_DIMENSIONAL_48K_v1.0.tap).** El juego ya está en este repositorio.
+## 📚 Documentación y material de desarrollo
 
-El manual, Atlas, carátula, fuentes y banco de trabajo se incorporarán automáticamente al subir el paquete `CIRCO_DIMENSIONAL_EDICION_DEFINITIVA_CONTROL_POR_TOQUES_2026.zip` a la raíz del repositorio. Un workflow de GitHub Actions comprobará el TAP, organizará los archivos y publicará la **Release v1.0**. No se modificará el juego.
+- [Manual en PDF](docs/Manual_Circo_Dimensional.pdf): historia de Dom, controles y pantallas.
+- [Atlas Visual en PDF](docs/Atlas_Visual_Circo_Dimensional.pdf): diseños, arquitectura técnica, problemas corregidos y memoria del proyecto.
+- [Código fuente Z80](fuente/CIRCO_NAVIDAD85_FINAL_2026.asm).
+- [Banco de trabajo](banco_de_trabajo/): recursos, scripts, pantallas y pruebas.
+- [Carátula y otros diseños](arte/).
+- [Capturas del juego](capturas/).
+- [Notas de la Release v1.0](RELEASE_NOTES.md).
 
-Puedes ver el progreso en [Actions](../../actions) y, tras finalizar, descargarlo todo desde [Releases](../../releases).
+## ⚙️ Especificaciones
 
-Consulta [las notas de v1.0](RELEASE_NOTES.md).
+- **Plataforma:** ZX Spectrum 48K.
+- **CPU:** Z80; juego en código máquina.
+- **Vídeo:** 256 × 192 píxeles, colores Spectrum.
+- **Sonido:** beeper 48K.
+- **Presentación:** crédito «2026 Tony C. Ware».
+- **Movimiento:** cinco carriles con controles por pulsaciones.
 
-## Autoría
+## ✍️ Autoría
 
-**Idea, dirección creativa, pruebas y decisiones de diseño:** Tony C. Ware.
+**Idea, dirección creativa, diseño, pruebas en Fuse y decisiones finales: Tony C. Ware.**
 
-Programación y documentación desarrolladas iterativamente en colaboración con ChatGPT, con correcciones basadas en pruebas reales del juego en Fuse.
+Programación, gráficos del juego y documentación desarrollados iterativamente en colaboración con ChatGPT, siguiendo las pruebas y decisiones del creador.
 
-© 2026 Tony C. Ware. Todos los derechos reservados hasta que el titular elija una licencia de reutilización.
+## ⚖️ Licencias y derechos
+
+- **Código Z80, scripts y pruebas:** **[Licencia MIT](LICENSE)**. Se pueden usar, modificar, redistribuir y comercializar con el aviso de copyright y el texto MIT.
+- **Carátula, logotipo, sprites, fondos, pantallas y capturas:** **derechos reservados**, salvo autorización específica. Consulta [LICENCIA_GRAFICOS.md](LICENCIA_GRAFICOS.md).
+- **TAP y PDF:** incorporan código y gráficos; el carácter MIT del código no implica que las ilustraciones también sean MIT. Consulta [DERECHOS.md](DERECHOS.md).
+
+**© 2026 Tony C. Ware.**
