@@ -1,0 +1,31 @@
+EL CIRCO DIMENSIONAL · EDICIÓN FINAL 2026
+========================================
+
+Juego/
+  CIRCO_DIMENSIONAL_48K_FINAL_2026.tap  -> Spectrum 48K, cargar en Fuse con LOAD "".
+Fuentes/
+  CIRCO_NAVIDAD85_FINAL_2026.asm  -> fuente completo Z80 de la compilación final.
+  CIRCO_NAVIDAD85_FINAL_2026.bin  -> código máquina y recursos.
+Banco_de_trabajo/Edicion_2026/
+  art.py, build.py, REBUILD_FINAL.py, pantallas, sprites, pruebas, logs y capturas.
+Manual_y_Atlas/
+  MANUAL_CIRCO_DIMENSIONAL_EDICION_DEFINITIVA.pdf
+  ATLAS_VISUAL_CIRCO_DIMENSIONAL_EDICION_DEFINITIVA.pdf
+Arte_original/
+  Carátula facilitada por el autor, atlas de sprites y diagrama de cinco carriles.
+Capturas/
+  titulo.png, pulpos.png, latigo.png, game.png, fin.png.
+
+EDICIÓN DEFINITIVA 2026 · TONY C. WARE
+Dirección creativa, concepto, pruebas en Fuse y decisiones finales: Tony C. Ware.
+Programación, arte de juego y documentación: colaboración con ChatGPT.
+
+CAMBIOS FINALES:
+ - La pantalla del juego muestra «2026 Tony C. Ware».
+ - El motor jugable y el resto de pantallas se han preservado respecto a V10.
+ - Documentación corregida: capturas con pulpos y descarga visible.
+ - Tablas con texto ajustado y sin desbordes.
+
+Las imágenes documentales de pulpos y rayo proceden de estados controlados
+procesados por el simulador parcial Z80: muestran auténtico código y arte
+del juego, pero NO son capturas directas de Fuse.

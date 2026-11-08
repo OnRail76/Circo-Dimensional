@@ -1,0 +1,18 @@
+screens 3 sprites 5
+CODE 24612 end 0xe024 TAP 31643 labels 223
+PASS title screen loaded perfectly 2
+PASS start game video 4 PC 0x800f
+PASS moving right and clean background 4
+PASS beam, hit, score and no debris 24
+PASS laser fully erased 30
+PASS sprite compositing after movements 48
+PASS complete restoration of empty arena (all pixel & color bytes)
+PASS 101 consecutive video-state checks
+PASS game over with three lives 161
+PASS menu return without visual corruption 165 instructions 257523
+PASS five simultaneous animated lanes match shadow screen byte-for-byte
+PASS idle gameplay: ZERO writes to visible Spectrum screen during idle
+PASS offscreen laser render and cleanup, including the attribute bytes
+PASS compositor counters visible writes 45531 shadow writes 28116 largest visible block 6912
+ALL VIDEO AND LOGIC TESTS PASSED
+PASS: 26 Z80-instruction-level timing tests at 13 scoring thresholds

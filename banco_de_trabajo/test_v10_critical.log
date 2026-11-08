@@ -1,0 +1,22 @@
+screens 3 sprites 5
+CODE 24612 end 0xe024 TAP 31643 labels 223
+PASS large score 0 [0, 0, 0]
+PASS large score 7 [0, 0, 7]
+PASS large score 49 [0, 4, 9]
+PASS large score 108 [1, 0, 8]
+PASS large score 255 [2, 5, 5]
+PASS big hearts 3
+PASS big hearts 2
+PASS big hearts 1
+PASS big hearts 0
+PASS big hearts 3
+PASS octopus entire staircase and cleanup, lane 0
+PASS octopus entire staircase and cleanup, lane 1
+PASS octopus entire staircase and cleanup, lane 3
+PASS octopus entire staircase and cleanup, lane 4
+PASS five octopuses combined state 1
+PASS five octopuses combined state 2
+PASS five octopuses combined state 3
+PASS five octopuses combined state 4
+PASS five octopuses combined state 0
+ALL V10 CRITICAL VIDEO CHECKS PASSED 194

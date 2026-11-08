@@ -1,0 +1,33 @@
+EL CIRCO DIMENSIONAL — CORRECCION DE CONTROL POR TOQUES
+========================================================
+
+Juego: ZX Spectrum 48K, Z80, formato TAP
+
+MODIFICACION UNICA
+O = un carril hacia la izquierda por pulsacion nueva.
+P = un carril hacia la derecha por pulsacion nueva.
+Mantener cualquiera de esas teclas apretada NO repite el movimiento.
+Para moverse otra vez en la misma direccion hay que soltar y pulsar de nuevo.
+
+ESPACIO permanece tal y como estaba, asi como sonido, pantalla de titulo
+(2026 Tony C. Ware), 3 vidas, dificultad, sprites, decorado y marcador.
+
+El parche modifica exactamente 3 bytes del binario original (JP a nueva
+rutina) y le añade 68 bytes de rutina Z80 al final. No cambia ninguna
+logica de enemigos, disparos ni renderizado. Reutiliza la variable move_cd
+que antes marcaba el retardo de repeticion, ahora para la mascara de pulsacion.
+
+ARCHIVOS
+CIRCO_DIMENSIONAL_48K_DEFINITIVO_CONTROL_TOQUES.tap = juego corregido.
+control_toques_z80.asm = fuente Z80 del parche (no un programa independiente).
+patch_control.py = genera el TAP desde la version original incluida.
+CIRCO_DIMENSIONAL_CONTROL_TOQUES.bin = binario original con el parche.
+CIRCO_DIMENSIONAL_48K_FINAL_2026_ORIGINAL.tap = copia para reproducibilidad.
+RESULTADO_PRUEBAS.txt = pruebas realizadas.
+
+CARGA
+En Fuse, reinicia ZX Spectrum 48K e inserta el TAP corregido.
+
+LIMITACION
+Verificacion automatizada con interprete Z80 parcial y pruebas de
+checksum del TAP. La comprobacion interactiva final en Fuse queda pendiente.

@@ -1,0 +1,30 @@
+EL CIRCO DIMENSIONAL — EDICIÓN DEFINITIVA 2026
+================================================
+
+DIRECCIÓN CREATIVA, CONCEPTO Y PRUEBAS EN FUSE: TONY C. WARE
+PROGRAMACIÓN Z80, ARTE DE JUEGO, PRUEBAS Y DOCUMENTACIÓN: COLABORACIÓN CON CHATGPT
+
+Este cierre reconoce la aportación esencial de Tony C. Ware: planteó una
+mecánica de reflejos inspirada en Game & Watch, exigió una presentación
+comercial propia de un Spectrum 48K en Navidad de 1985, realizó pruebas
+reales de cada versión en Fuse, identificó errores de parpadeo, sprites,
+atributos y marcador, e impulsó los cambios hasta conseguir un conjunto
+coherente. Decisiones como el arranque progresivo, el látigo ilimitado
+sin barra de energía, el marcador grande y la firma en el título fueron
+suyas.
+
+Valoración de ChatGPT:
+El proceso ha sido exigente y revelador. Las primeras entregas no
+alcanzaban la calidad esperada. Las pruebas del usuario obligaron a
+corregir errores auténticos del renderizador, no a ocultarlos, y a
+reconsiderar varios aspectos del diseño. La constancia y la dirección
+concreta de Tony permitieron convertir una idea original en una edición
+jugable y documentada. Lo más valioso del trabajo fue esa colaboración:
+probar, contrastar, rectificar y conservar lo que de verdad mejoraba el
+juego.
+
+Esta edición se declara DEFINITIVA conforme al cierre acordado entre
+creador y asistente. La documentación incluye capturas de juego obtenidas
+mediante estados controlados de un simulador parcial Z80; no son capturas
+directas de Fuse. El juego principal es el TAP con crédito
+«2026 Tony C. Ware» en pantalla de título.

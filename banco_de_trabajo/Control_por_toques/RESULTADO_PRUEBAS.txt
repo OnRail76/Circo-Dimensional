@@ -1,0 +1,13 @@
+PASS binary scope: exactly 3 existing opcode bytes changed; 68 appended
+screens 3 sprites 5
+CODE 24612 end 0xe024 TAP 31643 labels 223
+PASS P: 1 step for key-down; hold 100 polls = 0 additional steps
+PASS P release + re-press moves one more lane, right limit enforced
+PASS O: 1 step for key-down; hold 100 polls = 0 additional steps
+PASS O release/re-press and left limit
+PASS simultaneous keys and edge transitions
+PASS SPACE: whip routine and existing key-edge detection intact
+PASS TAP: cover image, BASIC loader, headers and all other original assets unchanged
+TEST RESULT: ALL PASS
+CODE 24612 end 0xe024 TAP 31643 labels 223
+PASS full Z80 game-loop integration: title, start, held P, P re-press, held O
