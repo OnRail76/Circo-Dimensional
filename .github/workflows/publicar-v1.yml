@@ -1,0 +1,25 @@
+name: Publicar versión 1.0
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Empaquetar edición completa
+        run: |
+          zip -q -r Circo-Dimensional-v1.0-completo.zip juego fuente docs arte capturas banco_de_trabajo parche_control_por_toques README.md RELEASE_NOTES.md DERECHOS.md recompilar_v1.py
+      - name: Publicar Release v1.0
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create v1.0 \
+            juego/CIRCO_DIMENSIONAL_48K_v1.0.tap \
+            docs/Manual_Circo_Dimensional.pdf \
+            docs/Atlas_Visual_Circo_Dimensional.pdf \
+            Circo-Dimensional-v1.0-completo.zip \
+            --title "El Circo Dimensional 1.0 — Edición definitiva" \
+            --notes-file RELEASE_NOTES.md \
+            --latest
