@@ -1,56 +1,39 @@
-name: Verificar y empaquetar El Circo Dimensional v1.1
+# La publicación v1.1 ya está cerrada. Este workflow SOLO VERIFICA.
+# No escribe commits, no actualiza capturas y no reemplaza assets de Releases.
+name: Verificar El Circo Dimensional (v1.0 y v1.1)
+
 on:
   push:
     branches: [main]
     paths:
       - '.github/workflows/publicar-v1.1.yml'
+      - 'banco_de_trabajo/**'
+      - 'publicacion/v1_1/**'
+      - 'juego/**'
+      - 'fuente/**'
+  pull_request:
+    paths:
+      - '.github/workflows/publicar-v1.1.yml'
+      - 'banco_de_trabajo/**'
+      - 'publicacion/v1_1/**'
+      - 'juego/**'
+      - 'fuente/**'
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
-  comprobar-y-empaquetar:
+  verificar-taps:
     runs-on: ubuntu-latest
     steps:
       - name: Descargar repositorio
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-          persist-credentials: true
-      - name: Preparar recursos gráficos de prueba
-        run: |
-          python3 -m pip install Pillow
-      - name: Reconstruir v1.0 y v1.1 y comprobar bytes originales
+      - name: Instalar dependencias de reconstrucción
+        run: python3 -m pip install Pillow
+      - name: Reconstruir y comparar ambos TAP
         run: |
           set -euo pipefail
           python3 banco_de_trabajo/REBUILD_FINAL.py
           echo "69f2cc4d4682eca9160595107886c0b9449b6cc745c4e2468e324b5db10f41f1  juego/CIRCO_DIMENSIONAL_48K_v1.0.tap" | sha256sum -c -
           echo "9105d9679319aae0f4de445142276c1bfe7c65df36993e6f86ad87ddfa03dac1  juego/CIRCO_DIMENSIONAL_48K_v1.1.tap" | sha256sum -c -
-      - name: Actualizar captura real del título VS
-        run: |
-          set -euo pipefail
-          python3 publicacion/v1_1/extraer_titulo.py juego/CIRCO_DIMENSIONAL_48K_v1.1.tap capturas/titulo.png
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add capturas/titulo.png
-          if ! git diff --cached --quiet; then
-            git commit -m "docs: actualizar título real v1.1 con VS"
-            git push origin HEAD:main
-          fi
-      - name: Crear ZIP con SOLO archivos seguidos por Git
-        run: |
-          set -euo pipefail
-          git archive --format=zip --prefix="Circo_Dimensional_v1.1/" HEAD --output=CIRCO_DIMENSIONAL_V1.1_COMPLETO.zip
-          unzip -tqq CIRCO_DIMENSIONAL_V1.1_COMPLETO.zip
-          unzip -Z -1 CIRCO_DIMENSIONAL_V1.1_COMPLETO.zip | grep -E '\.tap$' > taps_en_zip.txt
-          test "$(wc -l < taps_en_zip.txt)" -eq 2
-          ! grep -Eq '(banco_de_trabajo/.*\.(tap|bin|log)|EDICION_DEFINITIVA_CONTROL_POR_TOQUES_2026.zip)' taps_en_zip.txt
-          cat taps_en_zip.txt
-      - name: Actualizar solo el ZIP de Release v1.1
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          set -euo pipefail
-          gh release view v1.1
-          gh release upload v1.1 CIRCO_DIMENSIONAL_V1.1_COMPLETO.zip --clobber
