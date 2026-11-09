@@ -44,11 +44,13 @@ Solo se publican dos TAP en `juego/`: **v1.0 histórica** y **v1.1 definitiva**.
 Para reconstruir y cotejar ambas versiones desde el motor original:
 
 ```bash
-python3 -m pip install Pillow
-python3 banco_de_trabajo/REBUILD_FINAL.py
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install Pillow
+python banco_de_trabajo/REBUILD_FINAL.py
 ```
 
-La comparación es byte por byte e incluye comprobación SHA256. Consulta [cómo están organizadas las fuentes](fuente/README.md) y el [historial de limpieza](docs/HISTORIAL_Y_LIMPIEZA.md).
+La comparación es byte por byte e incluye comprobación SHA256. Además, [GitHub Actions verifica ambos TAP automáticamente](.github/workflows/verificar-circo.yml) **sin modificar la Release ni publicar nuevos archivos**. Consulta [cómo están organizadas las fuentes](fuente/README.md) y el [historial de limpieza](docs/HISTORIAL_Y_LIMPIEZA.md).
 
 ## 📚 Documentación y material de desarrollo
 
