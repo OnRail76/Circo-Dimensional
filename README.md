@@ -80,7 +80,7 @@ Programación, gráficos del juego y documentación desarrollados iterativamente
 
 ## ⚖️ Licencias y derechos
 
-- **Código Z80, scripts y pruebas:** **[Licencia MIT](LICENSE)**. Se pueden usar, modificar, redistribuir y comercializar con el aviso de copyright y el texto MIT.
+- **Código Z80, scripts y pruebas:** **Licencia MIT (edición asistida por IA)**, disponible en [inglés (LICENSE)](LICENSE) y [castellano (LICENSE_ES.md)](LICENSE_ES.md). Se pueden usar, modificar, redistribuir y comercializar conforme a sus condiciones, conservando el aviso de copyright y la licencia.
 - **Carátula, logotipo, sprites, fondos, pantallas y capturas:** **derechos reservados**, salvo autorización específica. Consulta [LICENCIA_GRAFICOS.md](LICENCIA_GRAFICOS.md).
 - **TAP y PDF:** incorporan código y gráficos; el carácter MIT del código no implica que las ilustraciones también sean MIT. Consulta [DERECHOS.md](DERECHOS.md).
 
