@@ -85,3 +85,11 @@ Programación, gráficos del juego y documentación desarrollados iterativamente
 - **TAP y PDF:** incorporan código y gráficos; el carácter MIT del código no implica que las ilustraciones también sean MIT. Consulta [DERECHOS.md](DERECHOS.md).
 
 **© 2026 Tony C. Ware.**
+
+<!-- ANEXO_PROGRAMAS_UTILIZADOS:INICIO -->
+## Programas utilizados — anexo documental
+
+Los **manuales de instrucciones y atlas visuales** incorporan, como **última página**, el anexo común **«Programas utilizados»**, con las aplicaciones, emuladores y servicios citados por el autor. [Consultar el inventario y sus enlaces](docs/ANEXO_PROGRAMAS_UTILIZADOS.md).
+
+Esta es una actualización **exclusivamente documental**: no altera los juegos, sus fuentes, ni las etiquetas o versiones publicadas.
+<!-- ANEXO_PROGRAMAS_UTILIZADOS:FIN -->
