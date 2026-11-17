@@ -3,7 +3,6 @@ EL CIRCO DIMENSIONAL — REPOSITORIO OFICIAL, v1.1
 
 JUEGO (ZX Spectrum 48K)
   juego/CIRCO_DIMENSIONAL_48K_v1.1.tap     Versión definitiva y recomendada.
-  juego/CIRCO_DIMENSIONAL_48K_v1.0.tap     Versión histórica.
   Emulador: Fuse, modelo Spectrum 48K; cargar la cinta (LOAD "").
   O/P: mover un carril por pulsación; ESPACIO: latigazo.
 
@@ -22,14 +21,11 @@ RECONSTRUIR Y COMPROBAR
   python3 -m pip install Pillow
   python3 banco_de_trabajo/REBUILD_FINAL.py
 
-La reconstrucción crea archivos temporales locales y confirma que las salidas
-v1.0 y v1.1 coinciden byte por byte con los TAP publicados.
+La reconstrucción crea archivos temporales locales y confirma que la salida v1.1 coincide byte por byte con el TAP publicado.
 
 VERSIONES Y LICENCIAS
   Release v1.1: https://github.com/OnRail76/Circo-Dimensional/releases/tag/v1.1
-  Release v1.0: https://github.com/OnRail76/Circo-Dimensional/releases/tag/v1.0
   LICENSE             Código y herramientas: MIT, © 2026 Tony C. Ware.
   LICENCIA_GRAFICOS.md  Arte, sprites, carátula y logotipo: derechos reservados.
 
 Las copias obsoletas no están en la rama principal; permanecen recuperables
-desde el historial de Git o en los ZIP históricos de las Releases.

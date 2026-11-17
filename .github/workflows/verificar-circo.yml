@@ -1,7 +1,5 @@
-# La publicación v1.1 ya está cerrada. Este workflow SOLO VERIFICA.
-# No escribe commits, no actualiza capturas y no reemplaza assets de Releases.
-name: Verificar El Circo Dimensional (v1.0 y v1.1)
-
+# Comprueba exclusivamente la edición definitiva v1.1; sin publicación automática.
+name: Verificar El Circo Dimensional v1.1
 on:
   push:
     branches: [main]
@@ -19,21 +17,17 @@ on:
       - 'juego/**'
       - 'fuente/**'
   workflow_dispatch:
-
 permissions:
   contents: read
-
 jobs:
-  verificar-taps:
+  verificar-tap:
     runs-on: ubuntu-latest
     steps:
-      - name: Descargar repositorio
-        uses: actions/checkout@v4
-      - name: Instalar dependencias de reconstrucción
+      - uses: actions/checkout@v4
+      - name: Dependencias
         run: python3 -m pip install Pillow
-      - name: Reconstruir y comparar ambos TAP
+      - name: Reconstruir y cotejar únicamente v1.1
         run: |
           set -euo pipefail
           python3 banco_de_trabajo/REBUILD_FINAL.py
-          echo "69f2cc4d4682eca9160595107886c0b9449b6cc745c4e2468e324b5db10f41f1  juego/CIRCO_DIMENSIONAL_48K_v1.0.tap" | sha256sum -c -
           echo "9105d9679319aae0f4de445142276c1bfe7c65df36993e6f86ad87ddfa03dac1  juego/CIRCO_DIMENSIONAL_48K_v1.1.tap" | sha256sum -c -

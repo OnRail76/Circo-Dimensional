@@ -12,7 +12,7 @@ No se han añadido versiones alternativas ni ejecutables experimentales a este d
 
 La pantalla de título real se puede regenerar con [extraer_titulo.py](extraer_titulo.py).
 
-Para reconstruir ambas versiones desde el origen:
+Para reconstruir y verificar la única edición vigente desde el origen:
 
 ```bash
 python3 -m pip install Pillow

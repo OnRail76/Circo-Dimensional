@@ -10,7 +10,7 @@ Un videojuego de reflejos inspirado en las primeras *Game & Watch*. Dom, el doma
 
 **[Descargar la Release oficial v1.1](https://github.com/OnRail76/Circo-Dimensional/releases/tag/v1.1)**
 
-La [v1.0 original](https://github.com/OnRail76/Circo-Dimensional/releases/tag/v1.0) se conserva como versión histórica.
+La **v1.1 es la única edición vigente**. La reconstrucción genera internamente los estados necesarios desde el motor original.
 
 Descarga el archivo [CIRCO_DIMENSIONAL_48K_v1.1.tap](juego/CIRCO_DIMENSIONAL_48K_v1.1.tap), configura **Fuse** como ZX Spectrum 48K, carga la cinta y pulsa ESPACIO en la pantalla de título.
 
@@ -39,9 +39,9 @@ Tres vidas, latigazo ilimitado, dificultad progresiva, escenarios coloridos y **
 
 ## 🧹 Repositorio limpio y reconstrucción verificable
 
-Solo se publican dos TAP en `juego/`: **v1.0 histórica** y **v1.1 definitiva**. Los resultados temporales del banco de trabajo ya no se versionan.
+Solo se publica un TAP en `juego/`: **v1.1 definitiva**. Los resultados temporales del banco de trabajo ya no se versionan.
 
-Para reconstruir y cotejar ambas versiones desde el motor original:
+Para reconstruir y cotejar la versión 1.1 desde el motor original:
 
 ```bash
 python3 -m venv .venv
@@ -50,7 +50,7 @@ python -m pip install Pillow
 python banco_de_trabajo/REBUILD_FINAL.py
 ```
 
-La comparación es byte por byte e incluye comprobación SHA256. Además, [GitHub Actions verifica ambos TAP automáticamente](.github/workflows/verificar-circo.yml) **sin modificar la Release ni publicar nuevos archivos**. Consulta [cómo están organizadas las fuentes](fuente/README.md) y el [historial de limpieza](docs/HISTORIAL_Y_LIMPIEZA.md).
+La comparación de 1.1 es byte por byte e incluye comprobación SHA256. Además, [GitHub Actions verifica el TAP v1.1 automáticamente](.github/workflows/verificar-circo.yml) **sin modificar la Release ni publicar nuevos archivos**. Consulta [cómo están organizadas las fuentes](fuente/README.md) y el [historial de limpieza](docs/HISTORIAL_Y_LIMPIEZA.md).
 
 ## 📚 Documentación y material de desarrollo
 

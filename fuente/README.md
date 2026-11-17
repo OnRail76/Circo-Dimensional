@@ -8,6 +8,6 @@
 1. `banco_de_trabajo/Control_por_toques/patch_control.py` para el control por pulsaciones de la v1.0.
 2. `publicacion/v1_1/reconstruir_v1_1.py` para la v1.1.
 
-Usa `python3 banco_de_trabajo/REBUILD_FINAL.py` desde la raíz para reproducir y verificar las dos versiones.
+Usa `python3 banco_de_trabajo/REBUILD_FINAL.py` desde la raíz para reproducir y verificar la versión definitiva 1.1.
 
 **Código MIT, © 2026 Tony C. Ware. Los gráficos integrados se rigen por [LICENCIA_GRAFICOS.md](../LICENCIA_GRAFICOS.md).**
