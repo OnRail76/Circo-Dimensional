@@ -50,7 +50,7 @@ python -m pip install Pillow
 python banco_de_trabajo/REBUILD_FINAL.py
 ```
 
-La comparación de 1.1 es byte por byte e incluye comprobación SHA256. Además, [GitHub Actions verifica el TAP v1.1 automáticamente](.github/workflows/verificar-circo.yml) **sin modificar la Release ni publicar nuevos archivos**. Consulta [cómo están organizadas las fuentes](fuente/README.md) y el [historial de limpieza](docs/HISTORIAL_Y_LIMPIEZA.md).
+La comparación de 1.1 es byte por byte e incluye comprobación SHA256. Además, [GitHub Actions verifica el TAP v1.1 automáticamente](.github/workflows/verificar-circo.yml) **sin modificar la Release ni publicar nuevos archivos**. Consulta [cómo están organizadas las fuentes](fuente/README.md) y las notas de la edición final `v1.1`.
 
 ## 📚 Documentación y material de desarrollo
 

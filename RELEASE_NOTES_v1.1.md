@@ -27,10 +27,10 @@ El **manual y Atlas** son los de la edición definitiva anterior y siguen docume
 
 **SHA256:** `9105d9679319aae0f4de445142276c1bfe7c65df36993e6f86ad87ddfa03dac1`
 
-Reproducción exacta desde el TAP v1.0: `python3 publicacion/v1_1/reconstruir_v1_1.py juego/CIRCO_DIMENSIONAL_48K_v1.0.tap juego/CIRCO_DIMENSIONAL_48K_v1.1.tap`.
+Reproducción y verificación exactas del TAP final desde el motor original: `python3 banco_de_trabajo/REBUILD_FINAL.py`. Las herramientas generan internamente el estado base necesario, sin conservar un TAP antiguo en la distribución.
 
 ## Derechos
 
 **Código Z80 y herramientas:** MIT, © 2026 Tony C. Ware. **Carátula, sprites, gráficos, capturas y logotipo:** derechos reservados, salvo autorización específica. Consulte [LICENSE](LICENSE) y [LICENCIA_GRAFICOS.md](LICENCIA_GRAFICOS.md).
 
-La [v1.0 histórica](https://github.com/OnRail76/Circo-Dimensional/releases/tag/v1.0) permanece disponible sin cambios.
+La **v1.1 es la única edición de distribución vigente**. El código del motor original permanece en el repositorio para reconstrucción, sin distribuir versiones anteriores.
